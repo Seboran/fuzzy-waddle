@@ -1,0 +1,23 @@
+{
+  "name": "fuzzy-waddle",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "git@github.com:Seboran/fuzzy-waddle.git",
+  "author": "Nirina Rabeson <nirinarabeson@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/app.js",
+    "build": "babel src -d dist"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.5",
+    "@babel/node": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "custom-env": "^2.0.1",
+    "nodemon": "^2.0.7"
+  }
+}
