@@ -1,9 +1,6 @@
 import assert from 'assert'
 import sinon from 'sinon'
 import { Actions } from './actions'
-import { CommandInteraction, Client } from 'discord.js'
-
-const discordClient = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES'] })
 
 describe('Actions', () => {
   /**
@@ -37,4 +34,19 @@ describe('Actions', () => {
       )
     })
   })
+
+  describe("#onMessage", () => {
+    it("Should save 1 message into the database", () => {
+
+    })
+
+    it("Should save multiple messages into the database", () => {
+
+    })
+
+    it("Should not save messages from self bot", () => {
+
+    })
+  })
+
 })

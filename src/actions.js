@@ -35,7 +35,7 @@ export class Actions {
   }
 
   @Command({ name: 'claim', description: 'Claim your Paninerd Tokens!' })
-  async claim2(interaction) {
+  async claim(interaction) {
     await interaction.reply('TBD')
   }
 }
