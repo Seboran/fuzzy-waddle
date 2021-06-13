@@ -1,0 +1,15 @@
+import sql from 'sql'
+sql.setDialect('postgres')
+
+export const initializeDatabase = `
+CREATE TABLE IF NOT EXISTS USERS(
+  ID CHAR(40) PRIMARY KEY NOT NULL,
+  ADDRESS CHAR(42)
+);
+
+CREATE TABLE IF NOT EXISTS MESSAGES(
+  ID CHAR(40) PRIMARY KEY NOT NULL,
+  USERID CHAR(40) NOT NULL,
+  SET BOOLEAN DEFAULT FALSE
+);
+`

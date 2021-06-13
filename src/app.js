@@ -3,16 +3,14 @@ import {
   Client
 } from 'discord.js'
 
+import { Actions } from "./actions"
+
 const client = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES'] })
+const actions = new Actions();
 
 client.on('ready', async () => {
   console.log(`Logged in as ${client.user.tag}!`)
-  const data = [
-    {
-      name: 'ping',
-      description: 'Replies with Pong!',
-    },
-  ]
+  const data = actions.getCommands();
 
   // Add command to DMs
   await client.application?.commands.set([])
@@ -33,18 +31,13 @@ client.on('ready', async () => {
   console.log('Set all commands')
 })
 
-client.on("message", async message => {
-	
-	const { id } = message.author;
-
-})
+client.on("message", actions.onMessage);
 
 client.on('interaction', async (interaction) => {
   if (!interaction.isCommand()) return
 
-  if (interaction.commandName === 'ping') {
-    await interaction.reply('Pong!')
-  }
+  await actions.onInteraction(interaction)
+
 })
 
 const TOKEN = process.env.DISCORD_TOKEN
