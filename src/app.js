@@ -1,9 +1,6 @@
 import '../init.js'
 import {
-  Client,
-  MessageActionRow,
-  MessageButton,
-  Permissions,
+  Client
 } from 'discord.js'
 
 const client = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES'] })
@@ -34,6 +31,12 @@ client.on('ready', async () => {
   )
 
   console.log('Set all commands')
+})
+
+client.on("message", async message => {
+	
+	const { id } = message.author;
+
 })
 
 client.on('interaction', async (interaction) => {

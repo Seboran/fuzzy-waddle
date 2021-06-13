@@ -10,7 +10,8 @@
     "build": "babel src -d dist"
   },
   "dependencies": {
-    "discord.js": "^13.0.0-dev.02693bc02f45980d8165820a103220f0027b96b7"
+    "discord.js": "^13.0.0-dev.02693bc02f45980d8165820a103220f0027b96b7",
+    "pg": "^8.6.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.5",
