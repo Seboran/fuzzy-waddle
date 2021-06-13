@@ -13,10 +13,10 @@ describe('Actions', () => {
   describe('#getCommands', () => {
     it('Should contain 2 precise commands', () => {
       const expectedActions = [
-        { name: 'claim', description: 'Claim your panini tokens!' },
         { name: 'ping', description: 'Responds with Pong!' },
+        { name: 'claim', description: 'Claim your Paninerd Tokens!' },
       ]
-      assert.strictEqual(actions.getCommands(), expectedActions)
+      assert.deepStrictEqual(actions.getCommands(), expectedActions)
     })
   })
 })
